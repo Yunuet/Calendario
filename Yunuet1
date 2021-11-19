@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <time.h> //Libreria que contiene las funciones de tiempo del sistema.
+
+int main()
+{
+
+int i,j,k,m,l,cont;				 //variables para correr ciclos
+int dia,mes,anio,semana,moduloMes,febrero,total_mes;//Variables para almacenar el tiempo de la estructura tm.
+int seleccion=1;					//Variable para un ciclo de respuestas.
+i=j=k=m=l=cont=0; 				//Inicializo todas las variables a 0.
+
+time_t sisTime; 	//time_t es un typedef, asigno una varible de este tipo (sisTime);
+struct tm *tiempo;	//Creo un puntero a la estructura tm, (ya definida en time.h).
+
+time(&sisTime);		//time obtiene el tiempo del sistema y se lo pasa a la direccion de sisTime nota.
+tiempo=localtime(&sisTime);
+//Convierte los valores de sisTime a compatibles con la estructura tm y luego asigno ese valor a tiempo.
+
+//Una estructura tm, esta compuesta por datos de tipo int, nota informatima mia
